@@ -62,6 +62,10 @@ OPTIONS
 
 
 # tell cmake what to call the executable we just made
+IF(WIN32)
+set(VALA_C ${VALA_C} journal.rc)
+set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} -mwindows)
+endif(WIN32
 add_executable(${EXEC_NAME} ${VALA_C})
 
 # install the binaries we just made
